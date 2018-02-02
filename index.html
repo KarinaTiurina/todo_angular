@@ -65,6 +65,22 @@
     <div class="container">
       <div class="row">  
           <div ng-controller="mainController">
+            <h3>Months</h3>
+            <ol>
+              <li ng-repeat="month in months">
+                {{ month.name }}
+                <ol>
+                  <li ng-repeat="weeks in month.weeks">
+                    неделя № {{ $index + 1 }}
+                    <ol>
+                      <li ng-repeat="week in weeks.week">
+                        {{ week.task }}
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
 
           </div>
       </div>
