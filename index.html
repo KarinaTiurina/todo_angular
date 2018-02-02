@@ -68,11 +68,11 @@
             <h3>Months</h3>
             <ol>
               <li ng-repeat="month in months">
-                {{ month.name }}
-                <ol>
+                <a href="" ng-click="month$index=true">{{ month.name }}</a>
+                <ol ng-show="month$index">
                   <li ng-repeat="weeks in month.weeks">
-                    неделя № {{ $index + 1 }}
-                    <ol>
+                    <a href="" ng-click="week$index=true">неделя № {{ $index + 1 }}</a>
+                    <ol ng-show="week$index">
                       <li ng-repeat="week in weeks.week">
                         {{ week.task }}
                       </li>
