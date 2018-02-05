@@ -1,0 +1,7 @@
+<li>
+  <a href="" ng-click="showWeek = ! showWeek">неделя № {{ index }}</a>
+  <ol ng-show="showWeek">
+    <task-div ng-repeat="week in weeksObject.week" task-object="week"></task-div>
+  </ol>
+</li>
+

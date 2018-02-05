@@ -15,22 +15,22 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-      
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      
+
     <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.3.0-rc.1/angular-messages.min.js"></script>
     <script src="https://code.angularjs.org/1.3.0-rc.1/angular-resource.min.js"></script>
 
-    <script src="app.js"></script>  
+    <script src="app.js"></script>
     <link href="starter-template.css" rel="stylesheet">
       <style>
           body { padding-top: 80px; }
       </style>
 
-    
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -59,29 +59,16 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>    
+      </div>
     </nav>
 
     <div class="container">
-      <div class="row">  
+      <div class="row">
           <div ng-controller="mainController">
             <h3>Months</h3>
             <ol>
-              <li ng-repeat="month in months">
-                <a href="" ng-click="showMonth = ! showMonth">{{ month.name }}</a>
-                <ol ng-show="showMonth">
-                  <li ng-repeat="weeks in month.weeks">
-                    <a href="" ng-click="showWeek = ! showWeek">неделя № {{ $index + 1 }}</a>
-                    <ol ng-show="showWeek">
-                      <li ng-repeat="week in weeks.week">
-                        {{ week.task }}
-                      </li>
-                    </ol>
-                  </li>
-                </ol>
-              </li>
+              <month-div ng-repeat="month in months" month-object="month"></month-div>
             </ol>
-
           </div>
       </div>
 
