@@ -1,11 +1,19 @@
 var myApp = angular.module('myApp', []);
 
-
 myApp.controller('mainController', ['$scope', '$http', function($scope, $http) {
-    $scope.months = null;
-    $http.get('json/timetable.json').success(function(data) {
-        $scope.months = data.months;
-    });
+  setItems();
+
+  $scope.months = [];
+
+  for(var key in localStorage) {
+    var month = JSON.parse(localStorage.getItem(key));
+    $scope.months.push(month);
+  }
+  $scope.months = $scope.months.filter(function(e){return e});
+
+
+  console.log($scope.months);
+
 }]);
 
 myApp.directive("taskDiv", function(){
