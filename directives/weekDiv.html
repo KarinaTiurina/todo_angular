@@ -2,6 +2,13 @@
   <a href="" ng-click="showWeek = ! showWeek">неделя № {{ index }}</a>
   <ol ng-show="showWeek">
     <task-div ng-repeat="week in weeksObject.week" task-object="week"></task-div>
+    <li>
+      <form ng-submit="submit()">
+        <input type="text" id="newTask" ng-model="newTask.task" />
+        <input type="submit" class="btn btn-primary" value="Добавить задание" week-object="weeksObject" />
+    </form>
+    </li>
+    <p>{{newTask | json }}</p>
   </ol>
 </li>
 

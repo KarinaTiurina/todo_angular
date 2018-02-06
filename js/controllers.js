@@ -2,6 +2,11 @@ myApp.controller('mainController', ['$scope', '$http', 'dbService', function($sc
   dbService.setItems();
   $scope.months = dbService.getMonths();
 
-  console.log($scope.months);
+  $scope.newTask = {};
+
+  $scope.submit = function() {
+    // alert("hello");
+    // alert(JSON.stringify($scope.newTask));
+  }
 
 }]);
