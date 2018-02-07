@@ -23,7 +23,7 @@ myApp.service('dbService', function(){
       ]
     };
 
-    localStorage.setItem("feb", JSON.stringify(feb));
+    localStorage.setItem("0", JSON.stringify(feb));
 
     var march = { "name": "Март",
       "weeks": [
@@ -47,7 +47,7 @@ myApp.service('dbService', function(){
       ]
     };
 
-    localStorage.setItem("march", JSON.stringify(march));
+    localStorage.setItem("1", JSON.stringify(march));
   };
 
   this.getMonths = function() {
@@ -60,4 +60,20 @@ myApp.service('dbService', function(){
 
     return months.filter(function(e){return e});
   };
+
+  this.refreshDB = function(months) {
+    localStorage.clear();
+    for (var i = 0; i < months.length; i++) {
+      localStorage.setItem(i.toString(), JSON.stringify(months[i]));
+    }
+  };
 });
+
+myApp.service('addData', ['dbService', function(dbService) {
+  this.addTask = function(newTask, monthIndex, weekIndex) {
+    var months = dbService.getMonths();
+    months[monthIndex].weeks[weekIndex].week.push(newTask);
+    dbService.refreshDB(months);
+  };
+}]);
+

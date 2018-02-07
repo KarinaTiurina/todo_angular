@@ -1,6 +1,6 @@
 <li>
   <a href="" ng-click="showMonth = ! showMonth">{{ monthObject.name }}</a>
   <ol ng-show="showMonth">
-    <week-div ng-repeat="weeks in monthObject.weeks" weeks-object="weeks" index="{{ $index + 1 }}"></week-div>
+    <week-div ng-repeat="weeks in monthObject.weeks" weeks-object="weeks" week-index="{{ $index + 1 }}" month-index="{{ monthIndex }}"></week-div>
   </ol>
 </li>

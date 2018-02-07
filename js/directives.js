@@ -14,8 +14,10 @@ myApp.directive("weekDiv", function(){
     replace: true,
     scope: {
       weeksObject: "=",
-      index: '@'
-    }
+      weekIndex: '@',
+      monthIndex: '@'
+    },
+    controller: 'WeekCtrl'
   }
 });
 
@@ -24,7 +26,8 @@ myApp.directive("monthDiv", function(){
     templateUrl: 'directives/monthDiv.html',
     replace: true,
     scope: {
-      monthObject: "="
+      monthObject: "=",
+      monthIndex: '@'
     }
   }
 });

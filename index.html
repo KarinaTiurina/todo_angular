@@ -72,7 +72,7 @@
           <div ng-controller="mainController">
             <h3>Months</h3>
             <ol>
-              <month-div ng-repeat="month in months" month-object="month"></month-div>
+              <month-div ng-repeat="month in months" month-object="month" month-index="{{ $index + 1 }}"></month-div>
             </ol>
           </div>
       </div>
